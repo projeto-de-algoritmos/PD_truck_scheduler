@@ -1,3 +1,32 @@
+def weighted_interval_scheduling(batches):
+    sorted_batches = sorted(batches, key=lambda x: x['end time'])
+    
+    n = len(sorted_batches)
+    dp = [0] * n
+    selected_batches = [None] * n 
+    
+    dp[0] = sorted_batches[0]['value']
+    selected_batches[0] = [sorted_batches[0]['id']]
+
+    for i in range(1, n):
+        latest_non_overlapping = -1
+        for j in range(i - 1, -1, -1):
+            if sorted_batches[j]['end time'] <= sorted_batches[i]['start time']:
+                latest_non_overlapping = j
+                break
+
+        include_current = sorted_batches[i]['value'] + (dp[latest_non_overlapping] if latest_non_overlapping != -1 else 0)
+        exclude_current = dp[i - 1]
+
+        if include_current > exclude_current:
+            dp[i] = include_current
+            selected_batches[i] = selected_batches[latest_non_overlapping] + [sorted_batches[i]['id']]
+        else:
+            dp[i] = exclude_current
+            selected_batches[i] = selected_batches[i - 1]
+
+    return dp[-1], selected_batches[-1]
+
 def knapsack(v, w, C):
     N = len(v)
     m = {}
@@ -13,7 +42,6 @@ def knapsack(v, w, C):
             else:
                 m[(i, c)] = m[(i - 1, c)]
 
-    # Find the selected items
     selected_items = []
     i, c = N, C
     while i > 0 and c > 0:
@@ -22,7 +50,6 @@ def knapsack(v, w, C):
             c -= w[i - 1]
         i -= 1
 
-    # Delete selected items from the list
     for item in sorted(selected_items, reverse=True):
         del w[item]
         del v[item]
@@ -45,7 +72,8 @@ while True:
     print('4.- Calcular batch')
     print('5.- Mostrar batch')
     print('6.- Eliminar batch')
-    print('7.- Sair')
+    print('7.- Calcular batch')
+    print('8.- Sair')
 
     option = input()
 
@@ -116,4 +144,10 @@ while True:
         else:
             print("nao tem batch para eliminar")   
     elif option == '7':
+        max_value, selected_batches = weighted_interval_scheduling(batch)
+        print(f"Valor maximo da schedule: {max_value}")
+        print("Contenido de schedule:")
+        for batch_id in selected_batches:
+            print(batch_id)
+    elif option == '8':
         break
