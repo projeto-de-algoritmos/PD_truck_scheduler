@@ -8,7 +8,7 @@
 | 21/1006957  |  Sebastián Héctor Zuzunaga Rosado |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted Interval Scheduling para criar "batches", que são um conjunto de pacotes e classificar estes "batches" em "schedules" que contêm  multiples "batches", isto com a proposta de poder entregar todos os pacotes com uma quantidade de espaço limitada em um único caminhão.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
