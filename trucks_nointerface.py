@@ -144,16 +144,28 @@ while True:
         else:
             print("nao tem batch para eliminar")   
     elif option == '7':
+        sched_num = 0
         while len(batch) > 0:
             max_value, selected_batches = weighted_interval_scheduling(batch)
-            print(f"Maior valor do schedule: {max_value}")
-            print("Contenido de schedule:")
+            print(f"Valor total de schedule {sched_num + 1}: {max_value}")
+            print(f"Contenido de schedule {sched_num + 1}:")
+        
             for batch_id in selected_batches:
-                print(batch_id)
-
                 batch_index = next((index for (index, d) in enumerate(batch) if d["id"] == batch_id), None)
 
                 if batch_index is not None:
+                    selected_batch = batch[batch_index]
+                
+        
+                    print(f"ID: {selected_batch['id']}")
+                    print(f"Valor: {selected_batch['value']}")
+                    print(f"Start time: {selected_batch['start time']}")
+                    print(f"End time: {selected_batch['end time']}")
+                
+                    # Remove the batch from the 'batch' list
                     del batch[batch_index]
+            sched_num += 1
+        if len(batch) < 1:
+            print("nao tem mais batches para schedule")
     elif option == '8':
         break
