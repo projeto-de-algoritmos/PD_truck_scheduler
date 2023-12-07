@@ -79,9 +79,14 @@ while True:
 
     if option == '1':
         packet_weight = int(input("Ingrese peso de paquete"))
-        packet_value = int(input("Ingrese valor de paquete"))
-        w.append(packet_weight)
-        v.append(packet_value)
+        if packet_weight < 0:
+            print("peso debe ser maior a 0")
+        else:
+            packet_value = int(input("Ingrese valor de paquete"))
+            if packet_value < 0:
+                print("valor debe ser maior a 0")
+                w.append(packet_weight)
+                v.append(packet_value)
     elif option == '2':
         if len(w) > 0:
             for i in range(len(w)):
@@ -95,25 +100,44 @@ while True:
                 print(f"{i + 1}. Peso: {w[i]}, Valor: {v[i]}")
 
             index_to_delete = int(input("Coloque index del pacote: ")) - 1
-
-            if 0 <= index_to_delete < len(w):
-                del w[index_to_delete]
-                del v[index_to_delete]
-                print("Pacote eliminado.")
+            if index_to_delete < 0:
+                print("Indice nao debe ser menor que 0")
             else:
-                print("Pacote nao encontrado.")
+                if 0 <= index_to_delete < len(w):
+                    del w[index_to_delete]
+                    del v[index_to_delete]
+                    print("Pacote eliminado.")
+                else:
+                    print("Pacote nao encontrado.")
         else:
             print("nao tem pacote para eliminar")
     elif option == '4':
         while len(v) > 0 and len(w) > 0:
-            print("Calculating maximum value of batch...")
-            result = knapsack(v, w, C)
-            print(f"Maximum value of batch: {result}")
-            batchNumber += 1
-            start_time = int(input("Enter start time: "))
-            end_time = int(input("Enter end time: "))
-            new_batch = {'id': batchNumber, 'value': result, 'start time': start_time, 'end time': end_time}
-            batch.append(new_batch)
+            print("Calculating batch...")
+            start_h = input("Enter start hour for job")
+            start_m = input("Enter start minute for job")
+            if(int(start_h)<0 or int(start_h)>23 or int(start_m)<0 or int(start_m)>60):
+                print("Start time invalid")
+            else:
+                start_time = str(start_h) + str(start_m)
+                start_time = int(start_time)
+                
+                end_h = input("Enter end time for job")
+                end_m = input("Enter entime for job")
+                
+                if(int(end_h)<0 or int(end_h)>23 or int(end_m)<0 or int(end_m)>60):
+                    print("end time invalid")
+                else:
+                    end_time = str(end_h) + str(end_m)
+                    end_time = int(end_time)
+                    if(end_time<start_time):
+                        print("end time cant be less tan start time")
+                    else:
+                        batchNumber += 1
+                        result = knapsack(v, w, C)
+                        print(f"Maximum value of batch: {result}")
+                        new_batch = {'id': batchNumber, 'value': result, 'start time': start_time, 'end time': end_time}
+                        batch.append(new_batch)
         if len(v) <= 0 and len(w) <= 0:
             print("Nao tem mais pacotes para agrupar")
     elif option == '5':
@@ -129,18 +153,20 @@ while True:
                 print(f"{batch[i]}")
 
             batch_to_delete = int(input("Coloque ID do batch a eliminar: "))
-
-            found_batch = None
-            for b in batch:
-                if b['id'] == batch_to_delete:
-                    found_batch = b
-                    break
-
-            if found_batch:
-                batch.remove(found_batch)
-                print("Batch eliminado.")
+            if batch_to_delete < 0:
+                print("id nao debe ser menor a 0")
             else:
-                print("Batch nao encontrado.")
+                found_batch = None
+                for b in batch:
+                    if b['id'] == batch_to_delete:
+                        found_batch = b
+                        break
+
+                if found_batch:
+                    batch.remove(found_batch)
+                    print("Batch eliminado.")
+                else:
+                    print("Batch nao encontrado.")
         else:
             print("nao tem batch para eliminar")   
     elif option == '7':
