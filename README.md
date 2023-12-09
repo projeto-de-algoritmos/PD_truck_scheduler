@@ -22,10 +22,9 @@ Powershell<br>
 Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py).<br>
 **Exemplo**:<br>
 ```bash
-  cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch\.git\'
-```
+  cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch'
 ```bash
-  .\trucks_nointerface.py
+  .\trucks_interface.py
 ```
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
