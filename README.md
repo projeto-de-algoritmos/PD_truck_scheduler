@@ -25,7 +25,7 @@ Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted
 Python<br>
 Powershell<br>
 **Execução**:<br>
-Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py).<br>
+Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (trucks_interface.py).<br>
 **Exemplo**:<br>
 ```bash
   cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch'
