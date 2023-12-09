@@ -23,6 +23,7 @@ Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seg
 **Exemplo**:<br>
 ```bash
   cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch'
+```
 ```bash
   .\trucks_interface.py
 ```
