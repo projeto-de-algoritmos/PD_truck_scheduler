@@ -107,7 +107,6 @@ class BatchSchedulerApp:
 
     def delete_packets(self):
         if len(self.w) > 0:
-            packets_info = "\n".join([f"{i + 1}. Peso: {self.w[i]}, Valor: {self.v[i]}" for i in range(len(self.w))])
             index_to_delete = self.get_input("Digite o índice do pacote a ser removido") - 1
             if 0 <= index_to_delete < len(self.w):
                 del self.w[index_to_delete]
@@ -153,7 +152,6 @@ class BatchSchedulerApp:
 
     def delete_batch(self):
         if len(self.batch) > 0:
-            batches_info = "\n".join([f"{batch}" for batch in self.batch])
             batch_to_delete = self.get_input("Digite o ID do lote a ser removido")
             if batch_to_delete is not None:
                 found_batch = None
