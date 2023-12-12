@@ -87,7 +87,7 @@ class BatchSchedulerApp:
 
     def insert_packet(self):
         packet_weight = self.get_input("Digite o peso do pacote")
-        if packet_weight is not None and packet_weight > 0 and packet_weight < self.C:
+        if packet_weight is not None and packet_weight > 0 and packet_weight <= self.C:
             packet_value = self.get_input("Digite o valor do pacote")
             if packet_value is not None and packet_value > 0:
                 self.w.append(packet_weight)
