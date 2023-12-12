@@ -87,7 +87,7 @@ class BatchSchedulerApp:
 
     def insert_packet(self):
         packet_weight = self.get_input("Digite o peso do pacote")
-        if packet_weight is not None and packet_weight > 0:
+        if packet_weight is not None and packet_weight > 0 and packet_weight < self.C:
             packet_value = self.get_input("Digite o valor do pacote")
             if packet_value is not None and packet_value > 0:
                 self.w.append(packet_weight)
@@ -96,14 +96,14 @@ class BatchSchedulerApp:
             else:
                 messagebox.showerror("Erro", "O valor do pacote deve ser maior que 0.")
         else:
-            messagebox.showerror("Erro", "O peso do pacote deve ser maior que 0.")
+            messagebox.showerror("Erro", "O peso do pacote deve ser maior que 0 e nao pode ser maior a capacidade do caminhão.")
 
     def show_packets(self):
         if len(self.w) > 0:
             packets_info = "\n".join([f"{i + 1}. Peso: {self.w[i]}, Valor: {self.v[i]}" for i in range(len(self.w))])
             self.show_info_window("Pacotes", packets_info)
         else:
-            self.show_info_window("Pacotes", "Não há pacotes para mostrar.")
+            messagebox.showinfo("Pacotes", "Não há pacotes para mostrar.")
 
     def delete_packets(self):
         if len(self.w) > 0:
@@ -149,7 +149,7 @@ class BatchSchedulerApp:
             batches_info = "\n".join([f"{batch}" for batch in self.batch])
             self.show_info_window("Lotes", batches_info)
         else:
-            self.show_info_window("Mostrar lotes", "Não há lotes para mostrar.")
+            messagebox.showinfo("Mostrar lotes", "Não há lotes para mostrar.")
 
     def delete_batch(self):
         if len(self.batch) > 0:
