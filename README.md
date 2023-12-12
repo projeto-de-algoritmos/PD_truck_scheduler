@@ -8,10 +8,16 @@
 | 21/1006957  |  Sebastián Héctor Zuzunaga Rosado |
 
 ## Sobre 
-Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted Interval Scheduling para criar "batches", que são um conjunto de pacotes e classificar estes "batches" em "schedules" que contêm  multiples "batches", isto com a proposta de poder entregar todos os pacotes com uma quantidade de espaço limitada em um único caminhão.
+Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted Interval Scheduling para criar lotes, que são um conjunto de pacotes e classificar estes lotes em horarios que contêm multiples lotes, isto com a proposta de poder entregar todos os pacotes com uma quantidade de espaço limitada em um único caminhão.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![image](https://github.com/projeto-de-algoritmos/PD_truck_scheduler/assets/98188828/dab4427b-4805-4897-8ec2-4858c233c847)
+
+![image](https://github.com/projeto-de-algoritmos/PD_truck_scheduler/assets/98188828/eb0da972-bbce-41c6-b9d3-4e6c3dd11585)
+
+![image](https://github.com/projeto-de-algoritmos/PD_truck_scheduler/assets/98188828/3f0e912f-791c-42b3-a20d-fdaf91683422)
+
+![image](https://github.com/projeto-de-algoritmos/PD_truck_scheduler/assets/98188828/9b34ffe5-c192-4f93-8f8a-c0de1e24f7c2)
 
 ## Instalação 
 **Linguagem**: Python<br>
@@ -19,19 +25,17 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 Python<br>
 Powershell<br>
 **Execução**:<br>
-Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (EventScheduler.py).<br>
+Use o comando cd no Powershell para chegar onde o aplicativo está salvo, em seguida, coloque o nome do aplicativo com a extensão de arquivo. py (trucks_interface.py).<br>
 **Exemplo**:<br>
 ```bash
-  cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch\.git\'
+  cd 'D:\UnB\Ciclo 6\PROJETO DE ALGORITMOS\TRABALHOS\TRABALHO 4\DinamicBatch'
 ```
 ```bash
-  .\trucks_nointerface.py
+  .\trucks_interface.py
 ```
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Uma vez executados os comandos aparecerá um menu, para utilizar as funcionalidades da aplicação apertar o boton com a ação desejada e em caso seja necessário preencher os espaços utilizando o formato adequado, este será mostrado na tela.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
 
 
 
