@@ -8,7 +8,7 @@
 | 21/1006957  |  Sebastián Héctor Zuzunaga Rosado |
 
 ## Sobre 
-Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted Interval Scheduling para criar "batches", que são um conjunto de pacotes e classificar estes "batches" em "schedules" que contêm  multiples "batches", isto com a proposta de poder entregar todos os pacotes com uma quantidade de espaço limitada em um único caminhão.
+Este programa usa os algoritmos de programação dinamica do Knapsack e Weighted Interval Scheduling para criar lotes, que são um conjunto de pacotes e classificar estes lotes em horarios que contêm multiples lotes, isto com a proposta de poder entregar todos os pacotes com uma quantidade de espaço limitada em um único caminhão.
 
 ## Screenshots
 ![image](https://github.com/projeto-de-algoritmos/PD_truck_scheduler/assets/98188828/dab4427b-4805-4897-8ec2-4858c233c847)
